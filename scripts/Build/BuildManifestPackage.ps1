@@ -191,8 +191,9 @@ if($IsWindows){
 Write-Host "✅ Created the new ManifestPackage in $outputDir." -ForegroundColor Blue
 
 # Cleanup temp directory
-if (Test-Path $tempPath) {
-    Write-Host "Cleaning up temporary directory..."
-    Remove-Item $tempPath -Recurse -Force -ErrorAction SilentlyContinue
-}
+# NOTA: Commentato per permettere la generazione del package successivamente
+# if (Test-Path $tempPath) {
+#     Write-Host "Cleaning up temporary directory..."
+#     Remove-Item $tempPath -Recurse -Force -ErrorAction SilentlyContinue
+# }
 

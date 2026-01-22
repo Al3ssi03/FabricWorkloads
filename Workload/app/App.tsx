@@ -3,6 +3,7 @@ import { Route, Router, Switch } from "react-router-dom";
 import { History } from "history";
 import { WorkloadClientAPI } from "@ms-fabric/workload-client";
 import { HelloWorldItemEditor} from "./items/HelloWorldItem";
+import { BCDataLoaderItemEditor } from "./items/BCDataLoaderItem";
 import { ConditionalPlaygroundRoutes } from "./playground/ConditionalPlaygroundRoutes";
 
 /*
@@ -47,6 +48,12 @@ export function App({ history, workloadClient }: AppProps) {
             <Route path="/HelloWorldItem-editor/:itemObjectId">
                 <HelloWorldItemEditor
                     workloadClient={workloadClient} data-testid="HelloWorldItem-editor" />
+            </Route>
+
+            {/* Routings for the BC Data Loader Item Editor */}
+            <Route path="/BCDataLoaderItem-editor/:itemObjectId">
+                <BCDataLoaderItemEditor
+                    workloadClient={workloadClient} data-testid="BCDataLoaderItem-editor" />
             </Route>
 
             {/* Conditionally loaded playground routes (only in development) */}
